@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiService } from 'src/api/api.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'fe-notabarista';
+  userInfo: any = '';
+
+  constructor(private apiService: ApiService) {
+
+  }
+
+  showUserInfo() {
+    this.apiService.getUserInfo()
+      .subscribe((data) => {
+        this.userInfo = data;
+      });
+  }
+
 }
