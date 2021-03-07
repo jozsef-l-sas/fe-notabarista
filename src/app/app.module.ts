@@ -5,19 +5,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './auth-interceptor.service';
-import { RegisterComponent } from './content/register/register.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContentComponent } from './content/content.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UserProfileComponent } from './content/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterComponent,
     HeaderComponent,
     FooterComponent,
-    ContentComponent
+    ContentComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
