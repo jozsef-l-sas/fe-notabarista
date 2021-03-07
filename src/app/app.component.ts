@@ -7,18 +7,5 @@ import { ApiService } from 'src/api/api.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'fe-notabarista';
-  userInfo: any = '';
-
-  constructor(private apiService: ApiService) {
-
-  }
-
-  showUserInfo() {
-    this.apiService.getUserInfo()
-      .subscribe((data) => {
-        this.userInfo = data;
-      });
-  }
 
 }
