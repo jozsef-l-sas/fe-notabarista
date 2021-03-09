@@ -8,11 +8,12 @@ import {
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {tap} from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(request).pipe( tap(() => {},
@@ -22,7 +23,7 @@ export class AuthInterceptor implements HttpInterceptor {
          return;
         }
         // relative URL without route - this may be rewritten properly with routes
-        window.location.href = '/authenticate';
+        window.location.href = '/authenticate?redirectUrl=' + this.router.url;
       }
     }));
   }

@@ -9,17 +9,9 @@ import { ApiService } from 'src/api/api.service';
 export class ContentComponent implements OnInit {
 
   title = 'fe-notabarista';
-  userInfo: any = '';
 
   constructor(private apiService: ApiService) {
 
-  }
-
-  showUserInfo() {
-    this.apiService.getUserInfo()
-      .subscribe((data) => {
-        this.userInfo = data;
-      });
   }
 
   ngOnInit(): void {

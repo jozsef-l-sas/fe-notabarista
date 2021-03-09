@@ -9,7 +9,7 @@ export class ApiService {
   constructor(private httpClient: HttpClient) {}
 
   getUserInfo() {
-    return this.httpClient.get('/user-management/nothing/test-okta-user', {responseType: 'text'});
+    return this.httpClient.get('/user-management/user/details', {responseType: 'text'});
   }
 
 }
